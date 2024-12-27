@@ -9,6 +9,8 @@ int main(){
     string colorb;
     string colortxt;
     string fonttxt;
+    string Align;
+    int num1;
     cout<<"wht is the tittle of website:";
     getline( cin, title);
     string html = "<Html><head>";
@@ -46,8 +48,30 @@ int main(){
     //Font niguh
     CSS.append("font-family:");
     CSS.append(fonttxt);
-    CSS.append(";}");
+    CSS.append(";");
 
+    do
+    {
+        cout<<"Allign Txt"<<endl;
+        cout<<"0 for left 1 for Center 2 for Right:";
+        cin>>num1;
+
+        if (num1 != 0 && num1 != 1 && num1 != 2)
+        {
+            cout<<"choose 0 1 or 2 Only"<<endl;
+        }
+        
+    } while (num1 !=0 && num1 !=1 && num1 != 2);
+    
+    if(num1 == 0){Align ="left";}
+    else
+    if(num1 == 1){Align ="center";}
+    else
+    if(num1 == 2){Align ="right";}
+
+    CSS.append("text-align:");
+    CSS.append(Align);
+    CSS.append(";}");
 //
 
     ofstream bgCSS("skibidi.css");
